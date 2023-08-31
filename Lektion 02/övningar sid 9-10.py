@@ -1,4 +1,4 @@
-'''
+
 #2.1
 citat =" datatyper har inbyggda metoder "
 print(citat.upper())
@@ -31,7 +31,7 @@ for i in range(5):
     heltal_lista.append(hel_tal)
 högsta_tal = max(heltal_lista)
 print(f"Det högsta talet du matade in är: {högsta_tal}")
-'''
+
 
 
 #2.6
