@@ -35,14 +35,13 @@ print(f"Det högsta talet du matade in är: {högsta_tal}")
 
 
 #2.6
-# Prislista
+
 prislista = {
     "Vanlig korv": 20.95,
     "Vegansk korv": 34.95,
     "Dryck": 13.95
 }
 
-# Funktion för att beräkna inköp och kostnader
 def berakna_inkop_och_kostnad(elev_data):
     total_korvar = 0
     total_veganska_korvar = 0
@@ -62,7 +61,6 @@ def berakna_inkop_och_kostnad(elev_data):
 
     return korvar_förpackningar, veganska_korvar_förpackningar, total_drycker, total_kostnad
 
-# Funktion för att mata in elevdata
 def mata_in_elevdata():
     antal_elever = int(input("Ange antal elever: "))
     elev_data = []
@@ -73,7 +71,6 @@ def mata_in_elevdata():
 
     return elev_data
 
-# Huvudprogram
 if __name__ == "__main__":
     elev_data = mata_in_elevdata()
     korvar_förpackningar, veganska_korvar_förpackningar, total_drycker, total_kostnad = berakna_inkop_och_kostnad(elev_data)
