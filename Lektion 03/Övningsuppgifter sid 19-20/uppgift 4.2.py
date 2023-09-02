@@ -1,4 +1,4 @@
-'''
+
 # uppgift 4.2
 while True:
     try:
@@ -17,7 +17,7 @@ while True:
         print("Ogiltig input. Försök igen.")
 
 print("Programmet avslutat.")
-'''
+
 
 # Alternativ
 multi = int(input("Ange multiplikationstabell > "))
