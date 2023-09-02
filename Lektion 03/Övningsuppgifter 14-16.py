@@ -139,7 +139,6 @@ if kön == "kvinna":
 
 
 # uppgift 4.1
-
 biggest_number = float('-inf')
 smallest_number = float('inf')
 

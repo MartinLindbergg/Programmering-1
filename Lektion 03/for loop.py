@@ -1,4 +1,4 @@
-'''
+
 #Exempel 1
 total = 0
 for counter in range(100):
@@ -16,7 +16,7 @@ for i in range(10):
 x = range(3, 20, 2)
 for i in x:
     print(i)
-'''
+
 
 #exempel 4
 start = int(input("Type starting value: "))
