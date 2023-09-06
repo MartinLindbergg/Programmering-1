@@ -16,7 +16,7 @@ new_todo = input("Add a new task: ")
 #Lägger till nya uppgiften i todo listan
 todos.append(new_todo)
 print(todos)
-
 '''
 
 #8.3
+todos = ["Städa", "Handla", "Plugga", "Ge blod"]
