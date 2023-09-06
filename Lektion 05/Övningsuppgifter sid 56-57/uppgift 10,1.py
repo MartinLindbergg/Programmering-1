@@ -3,7 +3,7 @@ def print_sign(message):
     border = "|-----------------------------------|"
     print(border)
     print("|-----------------------------------|")
-    print(f"|     || Welcome to {message} ||     |")
+    print(f"|     || Welcome to {message} ||    |")
     print("|-----------------------------------|")
     print(border)
     print("| C | Change sign message           |")
