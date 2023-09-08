@@ -15,7 +15,7 @@ def next_turn(row, column):
             label.config(text="Tie")
         
         else:
-            label.config(text=check_winner() + " wins")
+            label.config(text=check_winner()+" wins")
 
 def check_winner():
 
@@ -88,7 +88,7 @@ frame.pack()
 for row in range(3):
     for column in range(3):
         buttons[row][column] = Button(frame, text="", font=('consolas', 40), width=5, height=2, 
-                                      command=lambda row=row, column=column: next_turn(row, column))
+command=lambda row=row, column=column: next_turn(row, column))
         buttons[row][column].grid(row=row, column=column)
 
 window.mainloop()
