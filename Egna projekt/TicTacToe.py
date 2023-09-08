@@ -74,7 +74,10 @@ window = Tk()
 window.title("Tic-Tac-Toe")
 players = ["O", "X"]
 player = random.choice(players)
-buttons = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+buttons = [[0, 0, 0],
+           [0, 0, 0],
+           [0, 0, 0]
+           ]
 
 label = Label(text=player + " turn", font=('consolas', 40))
 label.pack(side="top")

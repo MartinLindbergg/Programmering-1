@@ -16,7 +16,7 @@ try:
     with open("sign.txt", "r") as file:
         current_message = file.read().strip()
 except FileNotFoundError:
-    current_message = "Västerås"
+    current_message = "hej"
 
 # Visa vägskylten med det aktuella meddelandet
 print_sign(current_message)
@@ -36,3 +36,21 @@ while True:
         break
     else:
         print("Ogiltigt val. Försök igen.")
+
+
+
+
+
+
+
+
+
+'''
+    with open("sign.txt", "r")as forcenterx:
+        #F orcenterx är hälften av alla mellanslag som får plats i skylten (18) minus hälften av antal bokstäver i meddelandet. omringar man meddelandet med varsin av denna variabel så centrerar det positionen utan att förstöra gränssnittet
+        forcenterx = (18 - (len(forcenterx.read()))/2)
+        # För säkerhetsskull så gör jag 2 variablar av forcenterx som nedan. skulle då forcenterx vara ett udda tal så blir forcenterspace1 ett mellanslag mindre än forcenterspace2. är talet uddan så hamnar meddelandet NÄSTAN i mitten men gränssnittets omgivning bibehålls
+        forcenterspace1 = (" " * (math.floor(forcenterx)))
+        forcenterspace2 = (" " * (math.ceil(forcenterx)))
+        
+        '''
