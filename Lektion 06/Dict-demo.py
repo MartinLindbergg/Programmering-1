@@ -98,3 +98,5 @@ person["adress"] = {
 #skriv ut adressen enligt svensk standard
 print(person["adress"]["gatuadress"])
 print(person["adress"]["postnummer"], person["adress"]["ort"])
+
+
