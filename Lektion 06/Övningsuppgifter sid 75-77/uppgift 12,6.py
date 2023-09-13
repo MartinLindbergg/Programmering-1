@@ -40,7 +40,7 @@ def remove_note(notes, title):
     else:
         print("Anteckningen hittades inte.")
 
-# Huvudprogram, skapar en kodblock som endast körs om skriptet körs som huvudprogram 
+# Huvudprogram, skapar en kodblock som endt askörs om skriptet körs som huvudprogram 
 if __name__ == "__main__":
     notes = load_notes()
     
