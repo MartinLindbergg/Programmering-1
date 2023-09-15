@@ -1,5 +1,21 @@
 import json
 
+import os
+
+def clear_terminal():
+    # Kolla vilket operativsystem som används
+    if os.name == 'posix':  # macOS och Linux
+        os.system('clear')
+    elif os.name == 'nt':  # Windows
+        os.system('cls')
+    else:
+        # Om operativsystemet inte är Windows eller macOS/Linux, gör inget
+        pass
+
+# Använd funktionen för att rensa terminalfönstret
+clear_terminal()
+
+
 # Funktion för att läsa data från en JSON-fil
 def load_notes():
     try:
@@ -39,12 +55,14 @@ def remove_note(notes, title):
         print(f"Anteckningen '{title}' har tagits bort.")
     else:
         print("Anteckningen hittades inte.")
+    
 
 # Huvudprogram, skapar en kodblock som endt askörs om skriptet körs som huvudprogram 
 if __name__ == "__main__":
     notes = load_notes()
     
     while True:
+        
         print("------------------")
         print(".: ALWAYSNOTE :.")
         print("-- gold edition --")
@@ -74,7 +92,8 @@ if __name__ == "__main__":
             save_notes(notes)
         elif choice == "exit":
             break
-
+# Använd funktionen för att rensa terminalfönstret
+        clear_terminal()
 
 
 
