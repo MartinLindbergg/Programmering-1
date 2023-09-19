@@ -29,3 +29,4 @@ def prompt(text):
 def clear():
     # Rensar skärmen
     os.system("clear")
+
