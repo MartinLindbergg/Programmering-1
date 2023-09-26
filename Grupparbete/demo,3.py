@@ -1,13 +1,11 @@
 import random
 
 def word_guessing_game():
-    """Ett enkelt ordgissningsspel med olika teman."""
-
-    # Skapa en lista med teman
+    # Create a theme list
     themes = ["Martins_skrivbord", "Martins_kylskåp", "Elenas_handväska"]
 
     while True:
-        # Skriv ut meny-ui
+        # Print menu-ui
         print("*" * 24)
         print("|____ Ord Gissaren ____|")
         print("-" * 24)
@@ -16,16 +14,16 @@ def word_guessing_game():
             print(f"|{theme}     |")
         print("-" * 24)
 
-        # Användare väljer tema
+        # user chooses theme
         selected_theme = input("Skriv vilket tema du vill spela: ")
 
-        # Kontrollera om temat finns
+        # see if theme is viable
         if selected_theme not in themes:
             print("Ogiltigt tema.")
             continue
         print("-" * 50)
 
-        # Väljer lista med ord baserat på tema
+        # choose theme based wordlist
         if selected_theme == "Martins_skrivbord":
             word_list = ["fläkt", "högtalare", "tangentbord", "mus", "burk", "snusdosa", "armbandsur", "hörlurar", "musmatta",
                         "lampa", "bildskärm", "laddstation", "musmatta"]
@@ -36,28 +34,28 @@ def word_guessing_game():
             word_list = ["läppglans", "mobilladdare", "våtservätter", "tuggummi", "hårborste", "godis", "deodorant", "strumpor",
                         "reflex", "parfym"]
 
-        # Väljer ord från temat
+        # Choose a word from the themelist
         word = random.choice(word_list)
 
-        # Skapa en lista med bokstäver som spelaren har gissat
+        # Create an empty list that saves input letters
         guessed_letters = []
 
-        # Skapa en lista med rätt gissade bokstäver
+        # Create an empty list that saves the correct letters from input
         correct_guesses = []
 
         while True:
-            # Användaren gissar en bokstav
+            # User letter input
             guessed_letter = input("Skriv en bokstav som du tror finns i ordet: ")
             print("-" * 50)
 
-            # Kontrollera om spelaren gissade rätt bokstav
+            # Check if the user guessed correct letter
             if guessed_letter in word:
                 print(f"Rätt! '{guessed_letter}' finns i ordet.")
                 correct_guesses.append(guessed_letter)
             else:
                 print(f"Tyvärr, '{guessed_letter}' finns inte i ordet.")
 
-            # Visa spelaren hur många rätt gissade bokstäver
+            # Show user the amount of correct guessed letters
             display_word = ""
             for letter in word:
                 if letter in correct_guesses:
@@ -67,11 +65,41 @@ def word_guessing_game():
 
             print(f"Rätt ord: {display_word}")
 
-            # Om spelaren har gissat hela ordet, avsluta spelet
+            # If user correctly guessed the whole word, end game
             if display_word == word:
-                print("Grattis, du gissade rätt ord!")
-                break
+                    print("********    *********     *")
+                    print("**               ***      *")
+                    print("**  ****        ***       *")
+                    print("**     **      **          ")
+                    print("*********    *********    *")
+                    print("Grattis, du gissade rätt ord!")
+                    print("---------------------------")
+                    break
 
 if __name__ == "__main__":
-    # Anropa spelet
+    # call game
     word_guessing_game()
+
+
+
+'''
+Att fixa:
+Ui-layout
+kortkommando för att välja tema
+exit-knapp
+programmet ska fråga användare "spela igen?" istället för att direkt starta om
+printa ut Grattis meddelande snyggare
+'''
+
+
+
+
+
+
+'''
+Tänka om och starta från början?
+Vill egentligen att användare ska gissa ord istället för bokstäver
+Om en korrekt bokstav finns med i ordet som användaren gissat, spara och printa ut som ledtråd.
+
+'''
+
