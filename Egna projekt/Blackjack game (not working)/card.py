@@ -18,3 +18,4 @@ class Card:
         print('|        |')
         print('----------')
 
+print(self)

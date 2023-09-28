@@ -1,4 +1,5 @@
 import random
+import sys
 
 def word_guessing_game():
 
@@ -6,13 +7,15 @@ def word_guessing_game():
     while True:
         # Skapa en dictionary med teman och deras motsvarande ordlistor.
         themes = {
-            1: ["fläkt", "högtalare", "tangentbord", "mus", "burk", "snusdosa", "armbandsur", "hörlurar", "musmatta",
-                "lampa", "bildskärm", "laddstation", "musmatta"],
-            2: ["smör", "oliver", "mjölk", "ägg", "proteinbar", "gurka", "ketchup", "äppelmos", "matlåda", "colaburk",
-                "ost", "lingonsylt", "tonfisk", "kikärtor"],
-            3: ["läppglans", "mobilladdare", "våtservätter", "tuggummi", "hårborste", "godis", "deodorant", "strumpor",
-                "reflex", "parfym"]
-        }
+
+            1: ["fläkt", "högtalare", "tangentbord", "mus", "bildskärm", "hörlurar", "musmatta", "lampa", "laddstation"],
+
+            2: ["smör", "mjölk", "ägg", "gurka", "ketchup", "ost", "skinka", "tonfisk", "kikärtor"],
+
+            3: ["läppglans", "mobilladdare", "tuggummi", "hårborste", "deodorant", "strumpor", "reflex", "parfym"]
+            
+            }
+        
 
         # Skriv ut menyn.
         print("*" * 24)
@@ -25,13 +28,13 @@ def word_guessing_game():
         print("*" * 24)
 
         # Be spelaren att välja ett menyalternativ.
-        selected_theme = input("Välj tema genom att skriva en siffra: ")
+        selected_theme = input("Välj tema > ")
 
         # Kontrollera om valt tema är giltigt.
         try:
             selected_theme = int(selected_theme)
             if selected_theme not in themes:
-                print("Ogiltigt tema.")
+                print("Välj ett giltigt tema (1, 2, eller 3).")
                 continue
         except ValueError:
             print("Välj ett giltigt tema (1, 2, eller 3).")
@@ -77,10 +80,10 @@ def word_guessing_game():
         # Fråga användaren om de vill spela igen eller avsluta.
         play_again = input("Vill du spela igen?: ")
         if play_again == "ja":
-            break
-        elif play_again != "nej":
-            print("Ogiltigt val. Avslutar spelet.")
-            break
+            word_guessing_game()
+        elif play_again == "nej":
+            print("Spelet Avslutat")
+            sys.exit()
 
 if __name__ == "__main__":
     # Anropa spelet.
