@@ -1,12 +1,15 @@
-
+# importera random-modul för att slumpmässigt dra kort
 import random
+# Importera sys-modul för att avsluta spelet baserat på input värde
 import sys
 
+# Skapar en klass för spel-korten med kortets värde samt "färg"
 class Card:
     def __init__(self, rank, suit):
         self.rank = rank
         self.suit = suit
-
+# Bestämmer värdet på de "klädda-korten" (Knekt är värt 11, Dam är värt 12, Kung är värt 13 och (Ess är värt 1 till en början)
+# Alla andra kort har sitt ursprungsvärde tex 3 = 3, 8 = 8 osv.
     def value(self):
         if self.rank in "J":
             return 11
@@ -125,6 +128,5 @@ class TwentyOneGame:
 if __name__ == "__main__":
     game = TwentyOneGame()
     game.play_game()
-
 
 
