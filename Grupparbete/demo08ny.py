@@ -1,21 +1,23 @@
+
 import random
 import sys
+import os
+
+def clear_terminal():
+    os.system("cls")
+
+def avsluta_spel():
+    print("Spelet Avslutat")
+    sys.exit()
 
 def word_guessing_game():
-
-
     while True:
         # Skapa en dictionary med teman och deras motsvarande ordlistor.
         themes = {
-
             1: ["fläkt", "högtalare", "tangentbord", "mus", "bildskärm", "hörlurar", "musmatta", "lampa", "laddstation"],
-
             2: ["smör", "mjölk", "ägg", "gurka", "ketchup", "ost", "skinka", "tonfisk", "kikärtor"],
-
             3: ["läppglans", "mobilladdare", "tuggummi", "hårborste", "deodorant", "strumpor", "reflex", "parfym"]
-            
-            }
-        
+        }
 
         # Skriv ut menyn.
         print("╔" + "═" * 22 + "╗")
@@ -26,6 +28,7 @@ def word_guessing_game():
         print("║1 Martins Skrivbord   ║")
         print("║2 Martins Kylskåp     ║")
         print("║3 Elenas Handväska    ║")
+        print("║──────────────────────║")
         print("║e Avsluta Spel        ║")
         print("╚" + "═" * 22 + "╝")
 
@@ -40,6 +43,9 @@ def word_guessing_game():
                 continue
             
         except ValueError:
+            # Om användaren trycker på "e", avsluta spelet.
+            if selected_theme == "e":
+                avsluta_spel()
             print("Välj ett giltigt tema (1, 2, eller 3).")
             continue
 
@@ -55,19 +61,21 @@ def word_guessing_game():
         # Spela spelet.
         while True:
             # Be spelaren att gissa ett ord.
-            guessed_letter = input("Gissa ett ord: ")
+            guessed_letter = input("Gissa ett ord eller bokstav: ")
 
             # Kontrollera om spelaren gissade rätt.
             if guessed_letter == word:
                 # Spelaren vann!
-                print("Grattis, du gissade rätt!")
+                clear_terminal()
+                print("\U0001f603", "Grattis, du gissade rätt!", "\U0001f603")
                 break
+            
 
             # Om spelaren inte gissade rätt, lägg till den gissade bokstaven till listan med gissade bokstäver.
             guessed_letters.append(guessed_letter)
 
             # Visa spelaren hur många bokstäver de har gissat rätt.
-            print("Du har gissat rätt på följande bokstäver:")
+            print("Hint! Du har gissat rätt på följande bokstäver:")
             for letter in word:
                 if letter in guessed_letters:
                     print(letter, end=" ")
@@ -77,36 +85,20 @@ def word_guessing_game():
 
             # Om spelaren har förbrukat alla sina gissningar, avsluta spelet.
             if len(guessed_letters) == len(word):
-                print("Du förlorade! Det rätta ordet var", word)
+                clear_terminal()
+                print("\U0001f627", "Du förlorade!","\U0001f627" "\nDet rätta ordet var", word)
                 break
 
         # Fråga användaren om de vill spela igen eller avsluta.
-        play_again = input("Vill du spela igen?: ")
+        print("═══════════════════════════════")
+        play_again = input("Vill du spela igen? (ja/nej): ")
         if play_again == "ja":
-            word_guessing_game()
+            continue
         elif play_again == "nej":
-            print("Spelet Avslutat")
-            sys.exit()
+            avsluta_spel()
 
 if __name__ == "__main__":
     # Anropa spelet.
     word_guessing_game()
 
 
-
-
-'''
-*** Att fixa ****
-
-easyfix:
-    * Snyggare ui
-    * Exit-knapp
-
-svårare:
-    * Print ut rätt gissade bokstäver som ledtråd
-    * Ta reda på hur många gånger man får gissa
-    (Skrivbord 9)
-    (Kylskåp 6)
-    (Handväska 12)
-
-'''
