@@ -1,41 +1,44 @@
 import random
 
 def word_guessing_game():
-    """Ett enkelt ordgissningsspel med olika teman."""
 
-    # Skapa en lista med teman.
-    themes = ["Martins_skrivbord", "Martins_kylskåp", "Elenas_handväska"]
 
     while True:
+        # Skapa en dictionary med teman och deras motsvarande ordlistor.
+        themes = {
+            1: ["fläkt", "högtalare", "tangentbord", "mus", "burk", "snusdosa", "armbandsur", "hörlurar", "musmatta",
+                "lampa", "bildskärm", "laddstation", "musmatta"],
+            2: ["smör", "oliver", "mjölk", "ägg", "proteinbar", "gurka", "ketchup", "äppelmos", "matlåda", "colaburk",
+                "ost", "lingonsylt", "tonfisk", "kikärtor"],
+            3: ["läppglans", "mobilladdare", "våtservätter", "tuggummi", "hårborste", "godis", "deodorant", "strumpor",
+                "reflex", "parfym"]
+        }
+
         # Skriv ut menyn.
         print("*" * 24)
         print("|____ Ord Gissaren ____|")
-        print("|","-" * 20, "|")
+        print("|", "-" * 20, "|")
         print("|      Välj Tema       |")
         print("|1 Martins Skrivbord   |")
         print("|2 Martins Kylskåp     |")
         print("|3 Elenas Handväska    |")
         print("*" * 24)
 
-
         # Be spelaren att välja ett menyalternativ.
-        selected_theme = input("Skriv vilket tema du vill spela: ")
+        selected_theme = input("Välj tema genom att skriva en siffra: ")
 
-        # Kontrollera om temat är giltigt.
-        if selected_theme not in themes:
-            print("Ogiltigt tema.")
+        # Kontrollera om valt tema är giltigt.
+        try:
+            selected_theme = int(selected_theme)
+            if selected_theme not in themes:
+                print("Ogiltigt tema.")
+                continue
+        except ValueError:
+            print("Välj ett giltigt tema (1, 2, eller 3).")
             continue
 
-        # Välj den aktuella listan med ord.
-        if selected_theme == "Martins_skrivbord":
-            word_list = ["fläkt", "högtalare", "tangentbord", "mus", "burk", "snusdosa", "armbandsur", "hörlurar", "musmatta",
-                        "lampa", "bildskärm", "laddstation", "musmatta"]
-        elif selected_theme == "Martins_kylskåp":
-            word_list = ["smör", "oliver", "mjölk", "ägg", "proteinbar", "gurka", "ketchup", "äppelmos", "matlåda", "colaburk",
-                        "ost", "lingonsylt", "tonfisk", "kikärtor"]
-        elif selected_theme == "Elenas_handväska":
-            word_list = ["läppglans", "mobilladdare", "våtservätter", "tuggummi", "hårborste", "godis", "deodorant", "strumpor",
-                        "reflex", "parfym"]
+        # Välj den aktuella listan med ord från dictionaryn.
+        word_list = themes[selected_theme]
 
         # Välj ett ord att gissa.
         word = random.choice(word_list)
@@ -70,6 +73,14 @@ def word_guessing_game():
             if len(guessed_letters) == len(word):
                 print("Du förlorade! Det rätta ordet var", word)
                 break
+
+        # Fråga användaren om de vill spela igen eller avsluta.
+        play_again = input("Vill du spela igen?: ")
+        if play_again == "ja":
+            break
+        elif play_again != "nej":
+            print("Ogiltigt val. Avslutar spelet.")
+            break
 
 if __name__ == "__main__":
     # Anropa spelet.
