@@ -4,7 +4,8 @@ import sys
 import os
 
 def clear_terminal():
-    os.system("cls")
+    os.system('cls'
+          if os.name == 'nt' else 'clear')
 
 def avsluta_spel():
     print("Spelet Avslutat")
@@ -90,7 +91,7 @@ def word_guessing_game():
                 break
 
         # Fråga användaren om de vill spela igen eller avsluta.
-        print("═══════════════════════════════")
+        print("════════════════════════════════")
         play_again = input("Vill du spela igen? (ja/nej): ")
         if play_again == "ja":
             continue
