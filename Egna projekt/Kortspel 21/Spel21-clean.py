@@ -40,7 +40,6 @@ class TwentyOneGame:
 
     def deal_initial_cards(self):
         self.user_hand.append(self.deck.draw_card())
-        self.user_hand.append(self.deck.draw_card())
         self.computer_hand.append(self.deck.draw_card())
         self.computer_hand.append(self.deck.draw_card())
 
@@ -125,6 +124,4 @@ class TwentyOneGame:
 if __name__ == "__main__":
     game = TwentyOneGame()
     game.play_game()
-
-
 

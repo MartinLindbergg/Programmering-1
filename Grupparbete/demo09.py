@@ -83,3 +83,4 @@ def word_guessing_game():
         play_again = input("Vill du spela igen? (ja/nej): ")
         if play_again == "ja":
             continue
+word_guessing_game()
