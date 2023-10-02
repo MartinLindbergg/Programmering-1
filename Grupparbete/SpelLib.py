@@ -2,8 +2,12 @@ import random
 import sys
 import os
 
-def clear_terminal():
-        os.system('cls' if os.name == 'nt' else 'clear')
+# game1.py
+class Game1:
+    def play(self):
+    
+        def clear_terminal():
+            os.system('cls' if os.name == 'nt' else 'clear')
 
 def avsluta_spel():
     print("Spelet Avslutat")
@@ -108,3 +112,20 @@ if __name__ == "__main__":
     # Anropa spelet.
     word_guessing_game()
 
+# game2.py
+class Game2:
+    def play(self):
+        # Implementera logiken för Game2 här
+        print("Spelet Game2 körs")
+
+# game3.py
+class Game3:
+    def play(self):
+        # Implementera logiken för Game3 här
+        print("Spelet Game3 körs")
+
+# game4.py
+class Game4:
+    def play(self):
+        # Implementera logiken för Game4 här
+        print("Spelet Game4 körs")

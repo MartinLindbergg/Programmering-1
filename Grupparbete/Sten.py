@@ -5,10 +5,27 @@ ui_width = 40
 
 
 class RockPaperScissor:
+
+
     def __init__(self):
         self.options = ["sten", "sax", "påse"]
         self.user_score = 0  # players score
         self.computer_score = 0  # computers score
+
+    def play(self):
+        while True:
+            self.clear_screen()
+            self.spel()
+            print("-" * 40)
+            cont = input("| Vill du spela igen (ja/nej): ").strip().lower()
+            
+            while cont not in ["ja", "nej"]:  # Error message if ja/nej is not answered
+                print("| Ogiltig inmatning. Vänligen svara med 'ja' eller 'nej'.")
+                cont = input("| Vill du spela igen (ja/nej): ").strip().lower()
+
+            if cont == "nej":  # exiting the game
+                print("| Tack för att du ville spela")
+                sys.exit()
 
     def clear_screen(self):  # clear terminal
         if os.name == 'nt':
@@ -66,9 +83,8 @@ class RockPaperScissor:
 
 if __name__ == "__main__":  # main program
     game = RockPaperScissor()
-    clear = RockPaperScissor()
     while True:
-        clear.clear_screen()
+        game.clear_screen()
         game.spel()
         print("-" * 40)
         cont = input("| Vill du spela igen (ja/nej): ").strip().lower()

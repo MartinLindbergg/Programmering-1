@@ -1,8 +1,22 @@
-import random
-import os
-import sys
 
-def word_guessing_game():
+import random
+import sys
+import os
+
+class GameOrdGame:
+    def __init__(self):
+        pass
+    
+    
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def avsluta_spel():
+    print("Spelet Avslutat")
+    sys.exit()
+
+def WordGuessingGame():
+
     while True:
         # Skapa en dictionary med teman och deras motsvarande ordlistor.
         themes = {
@@ -50,22 +64,32 @@ def word_guessing_game():
         # Skapa en lista med bokstäver som spelaren har gissat.
         guessed_letters = []
 
+        # Sätt max antal gissningar
+        max_guesses = len(word)
+
         # Spela spelet.
         while True:
+            # Räkna antalet gissningar som spelaren har kvar
+            guesses_left = max_guesses - len(guessed_letters)
+
+            # Skriv ut antalet gissningar som en hint
+            print("Du har", guesses_left, "chanser kvar.")
+
             # Be spelaren att gissa ett ord.
-            guessed_letter = input("Gissa ett ord: ")
+            guessed_letter = input("Gissa ett ord eller bokstav: ")
 
             # Kontrollera om spelaren gissade rätt.
             if guessed_letter == word:
                 # Spelaren vann!
-                print("Grattis, du gissade rätt!")
+                clear_terminal()
+                print("\U0001f603", "Grattis, du gissade rätt!", "\U0001f603")
                 break
-
+            
             # Om spelaren inte gissade rätt, lägg till den gissade bokstaven till listan med gissade bokstäver.
             guessed_letters.append(guessed_letter)
 
             # Visa spelaren hur många bokstäver de har gissat rätt.
-            print("Du har gissat rätt på följande bokstäver:")
+            print("Hint! Du har gissat rätt på följande bokstäver:")
             for letter in word:
                 if letter in guessed_letters:
                     print(letter, end=" ")
@@ -74,13 +98,20 @@ def word_guessing_game():
             print()
 
             # Om spelaren har förbrukat alla sina gissningar, avsluta spelet.
-            if len(guessed_letters) == len(word):
-                print("Du förlorade! Det rätta ordet var", word)
-                os.system("cls")
+            if len(guessed_letters) == max_guesses:
+                clear_terminal()
+                print("\U0001f627", "Du förlorade!","\U0001f627" "\nDet rätta ordet var", word)
                 break
 
         # Fråga användaren om de vill spela igen eller avsluta.
+        print("════════════════════════════════")
         play_again = input("Vill du spela igen? (ja/nej): ")
         if play_again == "ja":
             continue
-word_guessing_game()
+        elif play_again == "nej":
+            break
+           
+
+if __name__ == "__main__":
+    # Skapa ett objekt av GameGo-klassen och anropa metoden för att spela spelet.
+    game = WordGuessingGame()

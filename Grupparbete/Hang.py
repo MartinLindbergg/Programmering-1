@@ -1,4 +1,7 @@
 import random
+import os
+
+print(os.getcwd())
 
 # Read lines in file, the file contains words that the game can use
 with open('wordlist2.txt', 'r') as f:
