@@ -9,7 +9,9 @@ def main():
         clear_terminal()
         print("Välj ett spel:")
         print("1. Ordgissaren")
-        print("2. Avsluta")
+        print("2. Sten, Sax, Påse")
+        print("3. Finns i Sjön")
+        print("4. Hängagubbe")
 
         # Läs in användarens val.
         game_choice = input("Välj ett spel > ")
