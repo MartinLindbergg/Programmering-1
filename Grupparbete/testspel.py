@@ -58,7 +58,7 @@ def word_guessing_game():
         guessed_letters = []
 
         # Sätt max antal gissningar
-        max_guesses = len(word)
+        max_guesses = len(word) +100
 
         # Spela spelet.
         while True:
@@ -107,5 +107,3 @@ def word_guessing_game():
 if __name__ == "__main__":
     # Anropa spelet.
     word_guessing_game()
-
-
