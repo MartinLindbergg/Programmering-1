@@ -8,6 +8,7 @@ def clear_terminal():
 def avsluta_spel():
     print("Spelet Avslutat")
     sys.exit()
+    
 
 def word_guessing_game():
     while True:
@@ -45,6 +46,7 @@ def word_guessing_game():
             # Om användaren trycker på "e", avsluta spelet.
             if selected_theme == "e":
                 avsluta_spel()
+                break
             print("Välj ett giltigt tema (1, 2, eller 3).")
             continue
 
@@ -103,6 +105,7 @@ def word_guessing_game():
             continue
         elif play_again == "nej":
             avsluta_spel()
+
 
 if __name__ == "__main__":
     # Anropa spelet.

@@ -1,6 +1,6 @@
-# Random module for shuffle of the deck and computers random game-guesses
 import random
 import os
+import Huvudprogram
 
 
 # Class for the deck of cards & functions for the structure of the game.
@@ -21,6 +21,7 @@ class Deck:
     def draw(self):
         if not self.cards:
             print("The deck is now empty.")
+            print("")
             return None
         return self.cards.pop()
 
@@ -67,6 +68,7 @@ def clear_terminal():
         os.system('cls')
     else:
         os.system('clear')
+
 
 # Huvudspel
 def main_game():
@@ -133,7 +135,8 @@ def main_game():
                     print("")
             else:
                 new_card = deck.draw()
-                player_cards.append(new_card)
+                if new_card:
+                    player_cards.append(new_card)
                 print(print_welcome_message(player))
                 print(draw_border(f"Player score: {player_score} Computer score: {computer_score}"))
                 print("Player cards: ")
@@ -150,49 +153,55 @@ def main_game():
             print("Player cards: ")
             print(*player_cards, sep=', ')
             print(symbols + symbol_list[0])
-            print("")
+            #print("")
             print("")
             print("You can only pick cards you have on your hand. Better luck next time.")
             print("")
 
-        while True:
-            computer_guesses = random.choice(computer_cards)
-            if computer_guesses in player_cards:
-                while computer_guesses in player_cards:
-                    player_cards.remove(computer_guesses)
-                    computer_cards.append(computer_guesses)
-                clear_terminal()
-                print(print_welcome_message(player))
-                print(draw_border(f"Player score: {player_score} Computer score: {computer_score}"))
-                print("Player cards: ")
-                print(*player_cards, sep=', ')
-                print(symbols + symbol_list[0])
-                print("")
-                print("Computer guessing . . . ", computer_guesses)
-                print(f"{nemesis} stole {computer_guesses} from you!")
+        computer_guesses = random.choice(computer_cards)
+        if computer_guesses in player_cards:
+            while computer_guesses in player_cards:
+                player_cards.remove(computer_guesses)
+                computer_cards.append(computer_guesses)
+            #clear_terminal()
+            #print(print_welcome_message(player))
+            #print(draw_border(f"Player score: {player_score} Computer score: {computer_score}"))
+            #print("Player cards: ")
+            #print(*player_cards, sep=', ')
+            #print(symbols + symbol_list[0])
+            #print("")
+            print("Computer guessing . . . ", computer_guesses)
+            print(f"{nemesis} stole {computer_guesses} from you!")
+            print("")
+
+            computer_card_count = computer_cards.count(computer_guesses)
+            if computer_card_count == 4:
+                computer_cards = [card for card in computer_cards if card != computer_guesses]
+                computer_score += 1
+                #clear_terminal()
+                #print(print_welcome_message(player))
+                #print(draw_border(f"Player score: {player_score} Computer score: {computer_score}"))
+                #print("Player cards: ")
+                #print(*player_cards, sep=', ')
+                #print(symbols + symbol_list[0])
+                #print("")
+                #print("Computer guessing . . . ", computer_guesses)
+                #print(f"{nemesis} stole {computer_guesses} from you!")
+                #print("")
+                print("! Computer scored a point !")
                 print("")
 
-                computer_card_count = computer_cards.count(computer_guesses)
-                if computer_card_count == 4:
-                    computer_cards = [card for card in computer_cards if card != computer_guesses]
-                    computer_score += 1
-                    clear_terminal()
-                    print(print_welcome_message(player))
-                    print(draw_border(f"Player score: {player_score} Computer score: {computer_score}"))
-                    print("Player cards: ")
-                    print(*player_cards, sep=', ')
-                    print(symbols + symbol_list[0])
-                    print("")
-                    print("! Computer scored a point !")
-                    print("")
-                break
-            else:
-                print(f"Computer guessing . . . {computer_guesses}!")
-                print("Your nemesis guessed wrong. Go Fish! ")
-                print("")
-                new_card = deck.draw()
-                computer_cards.append(new_card)
-                break
+
+        else:
+            #print("")
+            print(f"Computer guessing . . . {computer_guesses}!")
+            print("Your nemesis guessed wrong. Go Fish! ")
+            print("")
+            new_card = deck.draw()
+            computer_cards.append(new_card)
+
+            # TOG BORT BREAK
+            # break
 
         if player_score >= 3:
             print(draw_border("Game Over! You Won!"))
