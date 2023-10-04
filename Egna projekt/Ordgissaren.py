@@ -1,9 +1,13 @@
-
+import sys
 import random
 import os
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def avsluta_spel():
+    print("Spelet Avslutat")
+    sys.exit()
 
 def WordGuessingGame():
 
@@ -45,8 +49,8 @@ def WordGuessingGame():
         except ValueError:
             # Om användaren trycker på "e", avsluta spelet.
             if selected_theme == "e":
-                break
-
+                clear_terminal()
+                avsluta_spel()
         # Välj den aktuella listan med ord från dictionaryn.
         word_list = themes[selected_theme]
 
@@ -101,7 +105,8 @@ def WordGuessingGame():
             clear_terminal()
             continue
         elif play_again == "nej":
-            break
+            clear_terminal()
+            avsluta_spel()
            
 
 if __name__ == "__main__":

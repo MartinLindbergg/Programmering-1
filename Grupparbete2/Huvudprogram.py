@@ -20,6 +20,7 @@ def main():
 
         # Starta spelet om användaren väljer "Ordgissaren".
         if game_choice == "1":
+            clear_terminal()
             WordGuessingGame()
         elif game_choice == "2":
             game = RockPaperScissor()
@@ -27,6 +28,7 @@ def main():
         elif game_choice == "3":
             GoFish.main_game()
         elif game_choice == "4":
+            clear_terminal()
             Hang.main()
         elif game_choice == "e":
             clear_terminal()
