@@ -54,25 +54,14 @@ class TwentyOneGame:
             print("Dina kort:")
             cards = []
             for card in self.user_hand:
-                #print("╔════════╗")
-                #print(f"║{card.suit} {card.rank}     ║")
-                #print("║        ║")
-                #print("║        ║")
-                #print(f"║     {card.rank} {card.suit}║")
-                #print("╚════════╝")
-                cards.append(["╔════════╗",f"║{card.suit} {card.rank}     ║","║        ║","║        ║",f"║     {card.rank} {card.suit}║","╚════════╝"])
-                index = 0
-            s = [[] for i in range(len(cards))]
-            print(cards)
-            strings = [len(cards)]
-            index = 0
-            for s in cards:
-                index = 0
-                for card in cards:
-                    
+                print("╔════════╗")
+                print(f"║{card.suit} {card.rank}     ║")
+                print("║        ║")
+                print("║        ║")
+                print(f"║     {card.rank} {card.suit}║")
+                print("╚════════╝")
+ 
                 
-                    
-                    
             user_value = self.calculate_hand_value(self.user_hand)
             print(f"Summa: {user_value}")
 
