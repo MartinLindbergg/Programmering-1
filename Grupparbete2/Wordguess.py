@@ -10,9 +10,11 @@ def WordGuessingGame():
     while True:
         # Skapa en dictionary med teman och deras motsvarande ordlistor.
         themes = {
-            1: ["fläkt", "högtalare", "tangentbord", "mus", "bildskärm", "hörlurar", "musmatta", "lampa", "laddstation"],
-            2: ["smör", "mjölk", "ägg", "gurka", "ketchup", "ost", "skinka", "tonfisk", "kikärtor"],
-            3: ["läppglans", "mobilladdare", "tuggummi", "hårborste", "deodorant", "strumpor", "reflex", "parfym"]
+            1: ["volvo", "ford", "kia", "honda", "toyota", "volkswagen", "mercedes", "audi", "bmw", "porsche"],
+            2: ["hund", "katt", "lejon", "elefant", "krokodil", "häst", "orm", "björn", "varg" "älg" "noshörning"],
+            3: ["äpple", "banan", "päron", "melon", "kiwi", "persika", "mandarin", "apelsin" "vindruvor"],
+            4: ["paris", "london", "tokyo", "rom", "sydney", "istanbul", "dubai", "stockholm", "oslo", "köpenhamn"],
+            5: ["fotboll", "basket", "tennis", "golf", "volleyboll", "baseball", "mma", "hockey", "paddel", "klättring"]
         }
 
         # Skriv ut menyn.
@@ -21,9 +23,11 @@ def WordGuessingGame():
         print("║──────────────────────║")
         print("║      Välj Tema       ║")
         print("║                      ║")
-        print("║1 Martins Skrivbord   ║")
-        print("║2 Martins Kylskåp     ║")
-        print("║3 Elenas Handväska    ║")
+        print("║1 Bilmärken           ║")
+        print("║2 Djur                ║")
+        print("║3 Frukter             ║")
+        print("║4 Städer              ║")
+        print("║5 Sporter             ║")
         print("║──────────────────────║")
         print("║e Avsluta Spel        ║")
         print("╚" + "═" * 22 + "╝")
