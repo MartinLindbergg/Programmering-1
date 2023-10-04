@@ -1,19 +1,9 @@
 
 import random
-import sys
 import os
 
-class GameOrdGame:
-    def __init__(self):
-        pass
-    
-    
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-def avsluta_spel():
-    print("Spelet Avslutat")
-    sys.exit()
 
 def WordGuessingGame():
 
@@ -51,9 +41,7 @@ def WordGuessingGame():
         except ValueError:
             # Om användaren trycker på "e", avsluta spelet.
             if selected_theme == "e":
-                avsluta_spel()
-            print("Välj ett giltigt tema (1, 2, eller 3).")
-            continue
+                break
 
         # Välj den aktuella listan med ord från dictionaryn.
         word_list = themes[selected_theme]
@@ -107,6 +95,7 @@ def WordGuessingGame():
         print("════════════════════════════════")
         play_again = input("Vill du spela igen? (ja/nej): ")
         if play_again == "ja":
+            clear_terminal()
             continue
         elif play_again == "nej":
             break

@@ -16,7 +16,8 @@ def word_guessing_game():
         themes = {
             1: ["fläkt", "högtalare", "tangentbord", "mus", "bildskärm", "hörlurar", "musmatta", "lampa", "laddstation"],
             2: ["smör", "mjölk", "ägg", "gurka", "ketchup", "ost", "skinka", "tonfisk", "kikärtor"],
-            3: ["läppglans", "mobilladdare", "tuggummi", "hårborste", "deodorant", "strumpor", "reflex", "parfym"]
+            3: ["läppglans", "mobilladdare", "tuggummi", "hårborste", "deodorant", "strumpor", "reflex", "parfym"],
+            4: ["Ben", "Boll", "Pinnar", "Skogen", "Godis", "Pussas", "Jucka"]
         }
 
         # Skriv ut menyn.
@@ -28,6 +29,7 @@ def word_guessing_game():
         print("║1 Martins Skrivbord   ║")
         print("║2 Martins Kylskåp     ║")
         print("║3 Elenas Handväska    ║")
+        print("║4 Bosses Favoriter    ║")
         print("║──────────────────────║")
         print("║e Avsluta Spel        ║")
         print("╚" + "═" * 22 + "╝")

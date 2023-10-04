@@ -2,16 +2,18 @@ from Wordguess import WordGuessingGame, clear_terminal
 from Sten import RockPaperScissor
 import GoFish
 import Hang
+import sys
 
 def main():
     while True:
         # Skriv ut menyn.
         clear_terminal()
         print("Välj ett spel:")
-        print("1. Ordgissaren")
-        print("2. Sten, Sax, Påse")
-        print("3. Finns i Sjön")
-        print("4. Hängagubbe")
+        print("1 Ordgissaren")
+        print("2 Sten, Sax, Påse")
+        print("3 Finns i Sjön")
+        print("4 Hängagubbe")
+        print("e Avlsuta Programmet")
 
         # Läs in användarens val.
         game_choice = input("Välj ett spel > ")
@@ -26,8 +28,10 @@ def main():
             GoFish.main_game()
         elif game_choice == "4":
             Hang.main()
-        elif game_choice == "no":
-            break
+        elif game_choice == "e":
+            clear_terminal()
+            print("Programmet Avslutades")
+            sys.exit()
 
 
 if __name__ == "__main__":
