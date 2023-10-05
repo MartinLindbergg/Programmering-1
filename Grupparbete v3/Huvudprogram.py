@@ -4,7 +4,6 @@ import GoFish
 import Hang
 import os
 
-
 username = None
 def get_username():
     global username
