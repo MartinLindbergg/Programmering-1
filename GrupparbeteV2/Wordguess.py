@@ -14,7 +14,7 @@ def WordGuessingGame():
             2: ["hund", "katt", "lejon", "elefant", "krokodil", "häst", "orm", "björn", "varg" "älg" "noshörning"],
             3: ["äpple", "banan", "päron", "melon", "kiwi", "persika", "mandarin", "apelsin" "vindruvor"],
             4: ["paris", "london", "tokyo", "rom", "sydney", "istanbul", "dubai", "stockholm", "oslo", "köpenhamn"],
-            5: ["fotboll", "basket", "tennis", "golf", "volleyboll", "baseball", "mma", "hockey", "paddel", "klättring"]
+            5: ["fotboll", "basket", "tennis", "golf", "volleyboll", "baseboll", "mma", "hockey", "paddel", "klättring"]
         }
 
         # Skriv ut menyn.
@@ -68,7 +68,7 @@ def WordGuessingGame():
             print("══════════════════════")
 
             # Be spelaren att gissa ett ord.
-            guessed_letter = input("Gissa ett ord eller bokstav: ")
+            guessed_letter = input("Gissa ett ord eller bokstav: ").lower()
 
             # Kontrollera om spelaren gissade rätt.
             if guessed_letter == word:
@@ -106,5 +106,4 @@ def WordGuessingGame():
            
 
 if __name__ == "__main__":
-    # Skapa ett objekt av GameGo-klassen och anropa metoden för att spela spelet.
     game = WordGuessingGame()
