@@ -16,7 +16,9 @@ def main():
         print("e Avlsuta Programmet")
 
         # Läs in användarens val.
-        game_choice = input("Välj ett spel > ")
+        print("══════════════════════")
+        print("(skriv en siffra 1,2,3,4 eller e för att avluta)")
+        game_choice = input("Viket spel vill du starta? >")
 
         # Starta spelet om användaren väljer "Ordgissaren".
         if game_choice == "1":

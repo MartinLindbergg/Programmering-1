@@ -65,6 +65,7 @@ def WordGuessingGame():
             guesses_left = max_guesses - len(guessed_letters)
             # Skriv ut antalet gissningar som en hint
             print("Du har", guesses_left, "chanser kvar.")
+            print("══════════════════════")
 
             # Be spelaren att gissa ett ord.
             guessed_letter = input("Gissa ett ord eller bokstav: ")
