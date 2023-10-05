@@ -1,6 +1,9 @@
-
+import os
 import random
 import sys
+
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 class Card:
     def __init__(self, rank, suit):
@@ -115,12 +118,15 @@ class TwentyOneGame:
             print("Grattis, du vinner!")
         else:
             print("Datorn vinner!")
+        print("══════════════════════")
         
         play_again = input("Vill du spela igen?: ")
         if play_again == "ja":
+            clear_terminal()
             new_game = TwentyOneGame()
             new_game.play_game()
         elif play_again == "nej":
+            clear_terminal()
             print("Spelet Avslutat")
             sys.exit()
 
