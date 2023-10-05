@@ -1,6 +1,6 @@
 import random
 import os
-import Huvudprogram
+import GrupparbeteV2.Huvudprogramv1 as Huvudprogramv1
 
 
 # Class for the deck of cards & functions for the structure of the game.
