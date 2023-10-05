@@ -87,7 +87,7 @@ if __name__ == "__main__":  # main program
         game.clear_screen()
         game.spel()
         print("-" * 40)
-        cont = input("| Vill du spela igen (ja/nej): ").strip().lower()
+        cont = input("| Spela nästa runda (ja/nej): ").strip().lower()
         
         while cont not in ["ja", "nej"]:  # Error message if ja/nej is not answered
             print("| Ogiltig inmatning. Vänligen svara med 'ja' eller 'nej'.")

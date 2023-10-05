@@ -36,7 +36,7 @@ def main():
             clear_terminal()
             print("Programmet Avslutades")
             sys.exit()
-
+        
 
 if __name__ == "__main__":
     main()
