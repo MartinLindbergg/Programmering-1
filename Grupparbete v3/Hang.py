@@ -161,8 +161,10 @@ def main():
         if play_again == 'yes':
             os.system('cls' if os.name == 'nt' else 'clear')
             return main()
-        elif play_again == 'no':
-            HangmanGame.exit_game()
+        # if play_again == 'no':
+        while play_again == 'no':
+            break
+            #HangmanGame.exit_game()
         # **********************************************************************
 
 
