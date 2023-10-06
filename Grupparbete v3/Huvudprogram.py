@@ -12,7 +12,6 @@ def get_username():
         with open('username.txt', 'w') as f:
             f.write(username)
         return username
-    # LÄSER IN NAMNET IGEN OM MAN VÄLJER ATT AVSLUTA SPEL OCH KOMMA TILLBAKA TILL MENYN
     else:
         if os.path.exists('username.txt'):
             with open('username.txt', 'r') as f:
