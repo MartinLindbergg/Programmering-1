@@ -40,7 +40,7 @@ def print_menu():
     print("*" * menu_width)
 
 
-# test av inmatning av namn:
+
 def main():
     while True:
         #clear_terminal()
